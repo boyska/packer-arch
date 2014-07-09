@@ -11,7 +11,7 @@
             "iso_checksum": "{{user `iso_checksum`}}",
             "iso_checksum_type": "{{user `iso_checksum_type`}}",
             "http_directory": ".",
-            "qemuargs": [ [ "-boot", "order=dc" ] ],
+            "qemuargs": [ [ "-boot", "order=cd" ] ],
             "boot_wait": "5s",
             "boot_command": [
                 "<enter><wait10><wait10>",
@@ -22,12 +22,6 @@
             "ssh_username": "root",
             "ssh_password": "pass",
             "shutdown_command": "systemctl start poweroff.timer"
-        }
-    ],
-    "post-processors": [
-        {
-            "type": "vagrant",
-            "output": "packer_arch_{{.Provider}}.box"
         }
     ]
 }
